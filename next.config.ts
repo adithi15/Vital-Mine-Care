@@ -1,28 +1,20 @@
-// module.exports = {
-//   reactStrictMode: false,
-//   webpack: (config: any) => {
-//     config.infrastructureLogging = { level: "warn" }; // Hide warnings
-//     return config;
-//   },
-// };
-
 /** @type {import('next').NextConfig} */
 
 module.exports = {
   reactStrictMode: false,
 
-  // ✅ Disable ESLint blocking the Vercel build
+  // 🚫 Disable ESLint during Vercel builds
   eslint: {
     ignoreDuringBuilds: true,
   },
 
-  // (Optional) Prevent TypeScript errors from stopping the build
+  // 🚫 Disable TypeScript errors stopping Vercel build
   typescript: {
     ignoreBuildErrors: true,
   },
 
   webpack: (config) => {
-    config.infrastructureLogging = { level: "warn" }; // Hide warnings
+    config.infrastructureLogging = { level: "warn" };
     return config;
   },
 };
